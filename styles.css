@@ -11,7 +11,9 @@ header {
     background: linear-gradient(135deg, #0f0f23, #1a1a2e);
     color: #ffffff;
     padding: 1.5rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-bottom: 2px solid #ff6b6b;
 }
@@ -219,7 +221,7 @@ main {
     height: 70px;
     border-radius: 8px;
     border: 1px solid rgba(150, 170, 220, 0.3);
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .rank-player {
