@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'Minecraft Rus';
+    src: url('Minecraft Rus/minecraft.ttf') format('truetype');
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Minecraft Rus', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
@@ -8,22 +13,50 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #0f0f23, #1a1a2e);
-    color: #ffffff;
-    padding: 1.5rem;
+    background: linear-gradient(120deg, rgba(24, 34, 65, 0.95), rgba(17, 26, 52, 0.85)), url('img/minecraft_title.png') center/cover no-repeat;
+    color: #fff;
+    padding: 1.2rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border-bottom: 2px solid #ff6b6b;
+    gap: 1rem;
+    border-bottom: 2px solid rgba(255, 107, 107, 0.5);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+header img {
+    width: auto;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.25);
 }
 
 nav a {
-    color: #ffffff;
-    margin: 0 1.5rem;
+    color: #f4f8ff;
+    margin: 0;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.8px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    color: #ffd66b;
+    transform: translateY(-1px);
+    text-shadow: 0 2px 8px rgba(255, 214, 107, 0.7);
 }
 
 nav a:hover {
@@ -145,7 +178,7 @@ main {
 }
 
 .logo {
-    font-family: 'Minecraft', Arial, sans-serif;
+    font-family: 'Minecraft Rus', Arial, sans-serif;
     font-size: 1.9rem;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -187,6 +220,51 @@ main {
     padding: 0.5rem 0.8rem;
     min-width: 180px;
 }
+
+.rank-system-controls {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+
+.rank-system-controls button {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(31, 52, 95, 0.8);
+    color: #f5f9ff;
+    border-radius: 10px;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rank-system-controls button:hover {
+    background: rgba(93, 163, 255, 0.75);
+    border-color: rgba(155, 205, 255, 0.9);
+    color: #0d1f3a;
+}
+
+.player-rank {
+    margin-top: 0.25rem;
+}
+
+.rank-badge {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 0.15rem 0.45rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.rank-badge.s { background: linear-gradient(120deg, #ff5a5a, #ffb86b); color: #2b1f00; }
+.rank-badge.a { background: linear-gradient(120deg, #ffd03f, #dac630); color: #2d1f00; }
+.rank-badge.b { background: linear-gradient(120deg, #77c9f5, #4d92ad); color: #0d2238; }
+.rank-badge.c { background: linear-gradient(120deg, #76f57a, #389755); color: #102516; }
+.rank-badge.d { background: linear-gradient(120deg, #d06aeb, #8e38b7); color: #231d3a; }
 
 .table-wrap {
     overflow-x: auto;
@@ -258,8 +336,16 @@ main {
 .rank-tiers {
     flex: 1.2;
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: flex-start;
+}
+
+.tier-item {
+    display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .player-avatar {
@@ -305,8 +391,11 @@ main {
 }
 
 .tier-dot img {
-    width: 28px;
-    height: 28px;
+    max-width: 28px;
+    max-height: 28px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     border-radius: 50%;
 }
 
@@ -323,6 +412,7 @@ main {
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .badge {
